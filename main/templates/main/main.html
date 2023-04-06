@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görevler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: rgb(19, 17, 13);
+            font-family: 'Raleway', sans-serif;
+            color: wheat;
+            padding-top: 50px;
+            text-decoration: none;
+        }
+        a{
+            text-decoration-line: none;
+            color: blanchedalmond;
+        }
+        a:hover{
+            text-decoration-line: none;
+            color: rgb(233, 159, 47);
+        }
+        .container{
+            max-width: 550px;
+            margin: auto;
+            background-color: rgb(32, 26, 16);
+            -webkit-box-shadow: 0px 0px 71px 3px rgba(112,61,7,0.66);
+            -moz-box-shadow: 0px 0px 71px 3px rgba(112,61,7,0.66);
+            box-shadow: 0px 0px 71px 3px rgba(112,61,7,0.66);
+            border: 0px solid #000000;
+            border-radius: 25px 25px 25px 25px;
+            
+
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            background: linear-gradient(90deg, rgba(233,92,11,1) 0%, rgba(181,45,0,1) 37%, rgba(203,102,39,1) 69%, rgba(218,61,9,1) 100%);
+        }
+        .gorev {
+            display: flex; 
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            border-top: 1px solid rgb(252, 151, 0);
+        }
+        .baslik{
+            display: flex;
+        }
+        .baslik a{
+            margin-left: 10px;
+        }
+        .gorev-bitis-ikon{
+            height: 20px;
+            width: 20px;
+            background-color: rgb(252, 151, 0);
+            border-radius: 50%;
+        }
+        .gorev-bitmemis-ikon{
+            height: 20px;
+            width: 20px;
+            background-color: rgb(255, 240, 220);
+            border-radius: 50%;
+        }
+        .sil{
+            font-weight: 900;
+            font-size: 21px;
+            line-height: 0;
+        }
+        .arama-kutusu{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        #ekle{
+            font-size: 45px;
+            text-shadow: 1px 1px rgb(255, 178, 36);
+        }
+        input[type=text],
+        input[type=password],
+        textarea {
+            border: 1px solid rgb(255, 178, 36);
+            border-radius: 5px;
+            padding: 10px;
+            width: 90%;
+        }
+        label {
+            padding-top: 10px !important;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .button {
+            border: 1px solid rgb(255, 178, 36);
+            background-color: rgb(32, 26, 16);
+            color: rgb(255, 178, 36);
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            border: 1px solid rgb(255, 178, 36);
+            background-color: rgb(255, 178, 36);
+            color: rgb(32, 26, 16);
+        }
+        .card{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        
+        {% block content %}
+            
+        {% endblock content %}
+            
+    </div>
+
+</body>
+</html>

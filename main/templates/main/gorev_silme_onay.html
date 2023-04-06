@@ -1,0 +1,15 @@
+{% extends 'main/main.html' %}
+{% block content %}
+
+    <div class="header">
+        <a href="{% url 'gorevler' %}">&#8592; Geri</a>
+    </div>
+    <div class="card">
+        <form method="POST">
+            {% csrf_token %}
+            <p>Görevi Silmek İstediğinize Emin misiniz? "{{gorev}}"</p>
+            <input class="button" type="submit" value="Sil"/>
+        </form>
+    </div>
+   
+{% endblock content %}

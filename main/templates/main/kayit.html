@@ -1,0 +1,19 @@
+{% extends 'main/main.html' %}
+{% block content %}
+
+    <div class="header">
+        <h1>Kayıt Ol</h1>
+    </div>
+
+    <div class="card">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input style="margin-top: 10px;" class="button" type="submit" value="Kayıt Ol">
+
+        </form>
+
+        <p>Zaten kayıtlı mısın? <a href="{% url 'giris' %}">Giriş Yap!</a></p>
+    </div>
+{% endblock content %}
+

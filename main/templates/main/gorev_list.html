@@ -1,0 +1,53 @@
+{% extends 'main/main.html' %}
+{% block content %}
+
+    <div class="header">
+        <div>
+            <h1>Hoşgeldin {{request.user}} !</h1>
+            <h3 style="margin: 0;">Yapılmayı Bekleyen&nbsp; {{sayi}} &nbsp;Görevin Var.</h3>
+        </div>
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'cikis' %}">Çıkış Yap</a>
+        {%else%}
+            <a href="{% url 'giris' %}">Giriş Yap</a>
+        {% endif %}
+    </div>
+
+    <div class="arama-kutusu">
+        <form method="GET" style="margin-top: 20px;display: flex;">
+            <input type="text" name="arama" value="{{arama_input}}">
+            <input class="button" type="submit" value="Ara">
+        </form>
+        <a id="ekle" href="{% url 'gorev-ekle' %}">&#x2b;</a> 
+    </div>
+
+
+
+ 
+
+    <div class="gorevler">
+        {% for gorev in gorevler %}
+            <div class="gorev">
+                {% if gorev.bitis %}
+                    <div class="baslik">
+                        <div class="gorev-bitis-ikon"></div>
+                        <i><s><a href="{% url 'gorev-guncelle' gorev.id %}">{{gorev}}</a></s></i>
+                    </div>
+                    <a class="sil" href="{% url 'gorev-sil' gorev.id %}">&#215;</a>
+                {% else %}
+                    <div class="baslik">
+                        <div class="gorev-bitmemis-ikon"></div>
+                        <a href="{% url 'gorev-guncelle' gorev.id %}">{{gorev}}</a>
+                    </div>
+                    <a class="sil" href="{% url 'gorev-sil' gorev.id %}">&#215;</a>
+                {% endif %}
+                
+            </div>
+        {% empty %}
+            <h3>Yapılacak Görev Bulunmamakta.</h3>
+        {% endfor %} 
+    </div>
+
+{% endblock content %}
+    
+

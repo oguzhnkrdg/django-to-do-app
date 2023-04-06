@@ -1,0 +1,23 @@
+{% extends 'main/main.html' %}
+{% block content %}
+
+    <div class="header">
+        <a href="{% url 'gorevler' %}">&#8592; Geri</a>
+    </div>
+
+    <div class="card">
+        <h3>Görev Ekle</h3>
+        <form  method="POST" action="">
+            {% csrf_token %}
+            <label>Başlık</label>
+            {{form.baslik}}
+            <label>Açıklama</label>
+            {{form.aciklama}}
+            <label>Görev Tamamlandı</label>
+            {{form.bitis}}
+            <br>
+            <input style="margin-top: 10px;" type="submit" class="button" value="Ekle">
+        </form>
+    </div>
+    
+{% endblock content %}
